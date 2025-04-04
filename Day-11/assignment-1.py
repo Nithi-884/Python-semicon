@@ -26,8 +26,6 @@ import random
 class Game:
     def __init__(self):
         self.attempts = 0
-
-    
     def check_answer(self,user_input,num):
         if user_input < num:
             self.attempts += 1
@@ -35,22 +33,18 @@ class Game:
         elif user_input > num:
             self.attempts += 1
             print(f"Your guess is Higher!!")
-            
         else:
             self.attempts += 1
             return True
 
-
 game1 = Game()
 computer_num = random.randint(1,100)
 print(computer_num)
-
 n = 0
 while n < 10:
     user_num = int(input("Enter your guess(1-100): "))
     ans = game1.check_answer(user_num,computer_num)
     n += 1
-    
     if ans:
         print(f"Congragulations your answer is correct❤️")
         break
@@ -60,7 +54,33 @@ while n < 10:
 
 
 
-
+"""
+random
+ 
+class Guessthenumber:
+    def __init__(self):
+        self.number = random.randint(1, 80)
+        self.no_of_gusess = 10
+ 
+    def start_game(self):
+        for attempt in range(1, self.no_of_gusess + 1):
+            guess = int(input(f"Attempt {attempt}/{self.no_of_gusess} - Give your guess: "))
+            if guess < self.number:
+                print("Give a bit higher")
+            elif guess > self.number:
+                print("Give a bit lower")
+            else:
+                print(f"WooHoo...yeah...you guessed it Correct! in {attempt} attempts.")
+                print("really you have a brain...!!!") 
+                break
+        else:
+            print(f"ohh...ohh...Sorry! the number is {self.number}.")
+            print("get your brain and try again")
+ 
+game = Guessthenumber()
+ 
+game.start_game()
+"""
 
 
 
